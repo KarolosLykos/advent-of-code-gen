@@ -1,4 +1,4 @@
-module github.com/KarolosLykos/cli-template
+module github.com/KarolosLykos/advent-of-code-gen
 
 go 1.17
 

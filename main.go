@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/KarolosLykos/cli-template/cmd"
+	"github.com/KarolosLykos/advent-of-code-gen/cmd"
 )
 
 func main() {

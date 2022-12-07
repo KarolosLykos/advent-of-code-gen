@@ -3,38 +3,38 @@
 
 <p align="center">
 
-<a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template/actions?query=workflow%3AGo+branch%3Amain">
-<img src="https://img.shields.io/github/workflow/status/KarolosLykos/cli-template/Go?style=flat-square" alt="Build Status">
+<a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/actions?query=workflow%3AGo+branch%3Amain">
+<img src="https://img.shields.io/github/workflow/status/KarolosLykos/advent-of-code-gen/Go?style=flat-square" alt="Build Status">
 </a>
 
 <a style="text-decoration: none" href="go.mod">
-<img src="https://img.shields.io/github/go-mod/go-version/KarolosLykos/cli-template?style=flat-square" alt="Go version">
+<img src="https://img.shields.io/github/go-mod/go-version/KarolosLykos/advent-of-code-gen?style=flat-square" alt="Go version">
 </a>
 
-<a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template/releases">
-<img src="https://img.shields.io/github/v/release/KarolosLykos/cli-template?style=flat-square" alt="Latest Release">
+<a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/releases">
+<img src="https://img.shields.io/github/v/release/KarolosLykos/advent-of-code-gen?style=flat-square" alt="Latest Release">
 </a>
     
-<a href="https://codecov.io/gh/KarolosLykos/cli-template" style="text-decoration: none">
-<img src="https://img.shields.io/codecov/c/gh/KarolosLykos/cli-template?color=magenta&logo=codecov&style=flat-square" alt="Downloads">
+<a href="https://codecov.io/gh/KarolosLykos/advent-of-code-gen" style="text-decoration: none">
+<img src="https://img.shields.io/codecov/c/gh/KarolosLykos/advent-of-code-gen?color=magenta&logo=codecov&style=flat-square" alt="Downloads">
 </a>
 
 <br />
 
-<a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template/releases">
-<img src="https://img.shields.io/github/downloads/KarolosLykos/cli-template/total.svg?style=flat-square" alt="Downloads">
+<a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/releases">
+<img src="https://img.shields.io/github/downloads/KarolosLykos/advent-of-code-gen/total.svg?style=flat-square" alt="Downloads">
 </a>
 
-<a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template/stargazers">
-<img src="https://img.shields.io/github/stars/KarolosLykos/cli-template.svg?style=flat-square" alt="Stars">
+<a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/stargazers">
+<img src="https://img.shields.io/github/stars/KarolosLykos/advent-of-code-gen.svg?style=flat-square" alt="Stars">
 </a>
 
-<a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template/fork">
-<img src="https://img.shields.io/github/forks/KarolosLykos/cli-template.svg?style=flat-square" alt="Forks">
+<a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/fork">
+<img src="https://img.shields.io/github/forks/KarolosLykos/advent-of-code-gen.svg?style=flat-square" alt="Forks">
 </a>
 
-<a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template/issues">
-<img src="https://img.shields.io/github/issues/KarolosLykos/cli-template.svg?style=flat-square" alt="Issues">
+<a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/issues">
+<img src="https://img.shields.io/github/issues/KarolosLykos/advent-of-code-gen.svg?style=flat-square" alt="Issues">
 </a>
 
 <a style="text-decoration: none" href="https://opensource.org/licenses/MIT">
@@ -44,7 +44,7 @@
 -----
 
 <p align="center">
-    <a style="text-decoration: none" href="https://github.com/KarolosLykos/cli-template/releases">
+    <a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/releases">
         <img src="https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-informational?style=for-the-badge" alt="Downloads">
     </a>
 </p>

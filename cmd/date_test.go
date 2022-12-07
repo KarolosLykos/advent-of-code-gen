@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KarolosLykos/cli-template/cmd"
+	"github.com/KarolosLykos/advent-of-code-gen/cmd"
 )
 
 var testCases = []struct {

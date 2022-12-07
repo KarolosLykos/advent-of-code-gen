@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/KarolosLykos/cli-template/cmd"
+	"github.com/KarolosLykos/advent-of-code-gen/cmd"
 )
 
 func TestRootCommandOutput(t *testing.T) {

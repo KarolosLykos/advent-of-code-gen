@@ -2,7 +2,7 @@ package cmd_test
 
 import (
 	"bytes"
-	"io/ioutil"
+	"io"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -21,7 +21,7 @@ func TestRootCommandOutput(t *testing.T) {
 	cmdErr := command.Execute()
 	require.NoError(t, cmdErr)
 
-	out, err := ioutil.ReadAll(b)
+	out, err := io.ReadAll(b)
 	require.NoError(t, err)
 
 	assert.Equal(t, "This is a template CLI application, which can be used as a boilerplate for awesome CLI tools written in Go.\n\n"+command.UsageString(), string(out))

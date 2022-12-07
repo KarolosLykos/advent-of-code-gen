@@ -2,7 +2,7 @@ package cmd_test
 
 import (
 	"bytes"
-	"io/ioutil"
+	"io"
 	"testing"
 	"time"
 
@@ -88,7 +88,7 @@ func TestDateCommand(t *testing.T) {
 		command.SetOut(b)
 
 		err := command.Execute()
-		out, _ := ioutil.ReadAll(b)
+		out, _ := io.ReadAll(b)
 
 		if tc.err {
 			assert.Error(t, err, tc.name)

@@ -2,9 +2,13 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
+
+var cfg string
 
 func NewRootCmd() *cobra.Command {
 	cmd := &cobra.Command{
@@ -20,6 +24,8 @@ func NewRootCmd() *cobra.Command {
 		},
 	}
 
+	cmd.PersistentFlags().StringVar(&cfg, "config", "", "config file (default is $HOME/.cobra.yaml)")
+
 	cmd.AddCommand(NewDateCmd())    // version subcommand
 	cmd.AddCommand(NewVersionCmd()) // version subcommand
 
@@ -33,4 +39,33 @@ func Execute() error {
 	}
 
 	return nil
+}
+
+func init() {
+	cobra.OnInitialize(initConfig)
+}
+
+func initConfig() {
+	if cfg != "" {
+		fmt.Println("here", cfg)
+		viper.SetConfigFile(cfg)
+	} else {
+		// Find home directory.
+		home, err := os.UserHomeDir()
+		cobra.CheckErr(err)
+
+		// Search config in home directory with name ".aof-gen.yaml".
+		viper.AddConfigPath(home)
+		viper.SetConfigType("yaml")
+		viper.SetConfigName(".aof-gen.yaml")
+	}
+
+	viper.AutomaticEnv()
+
+	if err := viper.ReadInConfig(); err != nil {
+		fmt.Println(viper.ConfigFileNotFoundError.Error(viper.ConfigFileNotFoundError{}))
+	}
+
+	fmt.Println("Using config file:", viper.ConfigFileUsed())
+	fmt.Println(viper.Get("aoc_session"))
 }

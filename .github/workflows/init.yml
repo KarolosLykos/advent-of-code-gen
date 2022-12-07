@@ -1,0 +1,25 @@
+name: Initialize
+
+on: push
+
+jobs:
+  init:
+    if: github.run_number == 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.17
+      - name: Run initialization
+        run: |
+          go get
+          go mod tidy
+          go run ./setup/main.go
+          rm ./.github/workflows/init.yml
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4

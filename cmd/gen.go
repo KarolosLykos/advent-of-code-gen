@@ -147,7 +147,7 @@ func genCmd(cmd *cobra.Command, _ []string) error {
 
 // validateDates validates years and days and setting default day.
 func validateDates() error {
-	if yearFlag <= 2020 || yearFlag > 2030 {
+	if yearFlag <= 2020 || yearFlag > time.Now().Year() {
 		return fmt.Errorf("invalid year")
 	}
 

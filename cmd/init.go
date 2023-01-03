@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"errors"
-	"fmt"
 	"os"
 	"os/exec"
 
@@ -50,25 +49,25 @@ func initCmd(_ *cobra.Command, _ []string) error {
 		return err
 	}
 
-	if _, err := os.Stat(cfg.ProjectDir + "/go.mod"); err == nil && !errors.Is(err, os.ErrNotExist) {
+	if _, err = os.Stat(cfg.ProjectDir + "/go.mod"); err == nil && !errors.Is(err, os.ErrNotExist) {
 		logrus.Infof("already initialized")
 
 		return nil
 	}
 
-	if err := os.Mkdir(cfg.ProjectDir, 0750); err != nil && !errors.Is(err, os.ErrExist) {
+	if err = os.Mkdir(cfg.ProjectDir, 0o750); err != nil && !errors.Is(err, os.ErrExist) {
 		logrus.Errorf("error creating directory: %v", err)
 
 		return err
 	}
 
-	if err := goModInit(cfg.ProjectDir, cfg.Module); err != nil {
+	if err = goModInit(cfg.ProjectDir, cfg.Module); err != nil {
 		logrus.Errorf("initializing module: %v", err)
 
 		return err
 	}
 
-	if _, err := os.Stat(cfg.ProjectDir + "/main.go"); err == nil && !errors.Is(err, os.ErrNotExist) {
+	if _, err = os.Stat(cfg.ProjectDir + "/main.go"); err == nil && !errors.Is(err, os.ErrNotExist) {
 		logrus.Infof("mod file already exists")
 	}
 
@@ -121,5 +120,5 @@ func goModInit(projectPath, m string) error {
 }
 
 func cdToProject(projectName string) error {
-	return os.Chdir(fmt.Sprintf("%s", projectName))
+	return os.Chdir(projectName)
 }

@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"context"
 	"errors"
 	"fmt"
 	"io"
@@ -84,7 +85,7 @@ func NewGenCmd() *cobra.Command {
 	return cmd
 }
 
-func genCmd(_ *cobra.Command, _ []string) error {
+func genCmd(cmd *cobra.Command, _ []string) error {
 	if err := validateDates(); err != nil {
 		return err
 	}
@@ -105,37 +106,26 @@ func genCmd(_ *cobra.Command, _ []string) error {
 	}
 
 	yearDir := cfg.ProjectDir + "/" + strconv.Itoa(yearFlag)
-
-	if err := os.Mkdir(yearDir, 0750); err != nil && !errors.Is(err, os.ErrExist) {
+	if err = os.Mkdir(yearDir, 0o750); err != nil && !errors.Is(err, os.ErrExist) {
 		logrus.Errorf("error creating directory: %v", err)
 
 		return err
 	}
 
 	dayDir := yearDir + "/" + formatDay(dayFlag)
-	if err := os.Mkdir(dayDir, 0750); err != nil && !errors.Is(err, os.ErrExist) {
+	if err = os.Mkdir(dayDir, 0o750); err != nil && !errors.Is(err, os.ErrExist) {
 		logrus.Errorf("error creating directory: %v", err)
 
 		return err
 	}
 
-	if _, err := os.Stat(dayDir + "/main.go"); err == nil && !errors.Is(err, os.ErrNotExist) {
-		logrus.Infof("solution exists")
-
-		return nil
-	}
-
-	tmpl := codegen.MustParse(solutionTemplate)
-	if err = tmpl.CreateFile(dayDir+"/main.go", map[string]interface{}{
-		"Year": yearFlag,
-		"Day":  formatDay(dayFlag),
-	}); err != nil {
-		logrus.Fatal(err)
+	if err = createMainFile(dayDir, yearFlag, dayFlag); err != nil {
+		logrus.Error(err)
 
 		return err
 	}
 
-	inputFile, err := getInputFile(cfg.Session, yearFlag, dayFlag)
+	inputFile, err := getInputFile(cmd.Context(), cfg.Session, yearFlag, dayFlag)
 	if err != nil {
 		logrus.Errorf("could not get input file %d/%d", yearFlag, dayFlag)
 
@@ -155,7 +145,7 @@ func genCmd(_ *cobra.Command, _ []string) error {
 	return nil
 }
 
-// validateDates validates years and days and setting default day
+// validateDates validates years and days and setting default day.
 func validateDates() error {
 	if yearFlag <= 2020 || yearFlag > 2030 {
 		return fmt.Errorf("invalid year")
@@ -165,14 +155,14 @@ func validateDates() error {
 		return fmt.Errorf("invalid day")
 	}
 
-	if time.Now().Month() != 12 {
+	if time.Now().Month() != time.December {
 		dayFlag = 1
 	}
 
 	return nil
 }
 
-// formatDay zero pads single-digit days
+// formatDay zero pads single-digit days.
 func formatDay(day int) string {
 	yearStr := strconv.Itoa(day)
 	if len(yearStr) == 1 {
@@ -181,13 +171,26 @@ func formatDay(day int) string {
 	return yearStr
 }
 
-func getInputFile(session string, year, day int) (string, error) {
+func createMainFile(dayDir string, yearFlag, dayFlag int) error {
+	_, err := os.Stat(dayDir + "/main.go")
+	if err == nil && !errors.Is(err, os.ErrNotExist) {
+		logrus.Infof("solution exists")
+
+		return nil
+	}
+
+	tmpl := codegen.MustParse(solutionTemplate)
+
+	return tmpl.CreateFile(dayDir+"/main.go", map[string]interface{}{"Year": yearFlag, "Day": formatDay(dayFlag)})
+}
+
+func getInputFile(ctx context.Context, session string, year, day int) (string, error) {
 	url := fmt.Sprintf("https://adventofcode.com/%d/day/%d/input", year, day)
-	c := http.Client{Timeout: time.Duration(3) * time.Second}
+	c := http.Client{Timeout: 3 * time.Second}
 
 	cookie := &http.Cookie{Name: "session", Value: session, MaxAge: 0}
 
-	req, err := http.NewRequest(http.MethodGet, url, nil)
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
 		return "", err
 	}
@@ -202,7 +205,7 @@ func getInputFile(session string, year, day int) (string, error) {
 
 	defer resp.Body.Close()
 
-	if resp.StatusCode != 200 {
+	if resp.StatusCode != http.StatusOK {
 		return "", fmt.Errorf("something went wrong %d", resp.StatusCode)
 	}
 

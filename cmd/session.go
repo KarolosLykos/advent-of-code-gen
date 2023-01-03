@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 
 	"github.com/KarolosLykos/advent-of-code-gen/internal/config"
@@ -13,8 +11,8 @@ var sessionFlag string
 func NewSessionCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "session",
-		Short: "Initialize AoC",
-		Long:  "Initialize a new AoC project.",
+		Short: "Session Cookie value",
+		Long:  "Set the session cookie value from the https://adventofcode.com website",
 		RunE:  sessionCmd,
 	}
 
@@ -24,11 +22,10 @@ func NewSessionCmd() *cobra.Command {
 }
 
 func sessionCmd(_ *cobra.Command, _ []string) error {
-	cfg, err := config.GetUserConfig()
+	_, err := config.GetUserConfig()
 	if err != nil {
 		return err
 	}
 
-	fmt.Println(cfg)
 	return nil
 }

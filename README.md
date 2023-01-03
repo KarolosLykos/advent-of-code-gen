@@ -49,16 +49,16 @@
     </a>
 </p>
 
-<br/>
+-----
 
-----
+# Commands
 
-<p align="center">
-<strong><a href="https://KarolosLykos.github.io/cli-template/#/docs">Documentation</a></strong>
-|
-<strong><a href="https://KarolosLykos.github.io/cli-template/#/CONTRIBUTING">Contributing</a></strong>
-</p>
+- Init: Initialize configuration file, folder and project
+- Session: Set the session cookie value
+- Gen: Generate puzzle solution
 
-----
+-----
 
-This is a Github repository template for CLI applications written in Go.
+### Automatically pulling puzzle input from website
+
+Set the session cookie value with the `session` command and generate puzzle.

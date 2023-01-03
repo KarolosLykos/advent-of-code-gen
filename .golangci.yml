@@ -2,7 +2,7 @@ run:
   tests: false
 
 linters-settings:
-  goimports:
+  gci:
     local-prefixes: github.com/KarolosLykos/advent-of-code-gen
   gocyclo:
     min-complexity: 15
@@ -23,16 +23,13 @@ linters:
   # inverted configuration with `enable-all` and `disable` is not scalable during updates of golangci-lint
   disable-all: true
   enable:
-    - deadcode
     - errcheck
     - gosimple
     - govet
     - ineffassign
     - staticcheck
-    - structcheck
     - typecheck
     - unused
-    - varcheck
     - bodyclose
     - depguard
     - dupl
@@ -46,10 +43,8 @@ linters:
     - gocyclo
     - godot
     - gofumpt
-    - gomnd
     - goprintffuncname
     - gosec
-    - ifshort
     - misspell
     - noctx
     - nolintlint

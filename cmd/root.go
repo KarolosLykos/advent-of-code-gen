@@ -10,9 +10,7 @@ import (
 	"github.com/KarolosLykos/advent-of-code-gen/internal/config"
 )
 
-var (
-	debugFlag bool
-)
+var debugFlag bool
 
 func NewRootCmd() *cobra.Command {
 	cmd := &cobra.Command{

@@ -80,7 +80,7 @@ func NewGenCmd() *cobra.Command {
 	}
 
 	cmd.Flags().IntVarP(&yearFlag, "year", "y", time.Now().Year(), "aoc gen [-y year]")
-	cmd.Flags().IntVarP(&dayFlag, "day", "d", 1, "aoc init [-d day]")
+	cmd.Flags().IntVarP(&dayFlag, "day", "d", 1, "aoc gen [-d day]")
 
 	return cmd
 }
@@ -153,10 +153,6 @@ func validateDates() error {
 
 	if dayFlag < 1 || dayFlag > 31 {
 		return fmt.Errorf("invalid day")
-	}
-
-	if time.Now().Month() != time.December {
-		dayFlag = 1
 	}
 
 	return nil

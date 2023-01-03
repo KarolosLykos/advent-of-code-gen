@@ -21,7 +21,7 @@ func NewRootCmd() *cobra.Command {
 		Version: "v0.0.1",
 	}
 
-	cmd.PersistentFlags().BoolVar(&debugFlag, "debug", false, "aoc [command] -d")
+	cmd.PersistentFlags().BoolVar(&debugFlag, "debug", false, "aoc [command] --debug")
 
 	cmd.AddCommand(NewInitCmd()) // init command
 	cmd.AddCommand(NewGenCmd())  // gen subcommand

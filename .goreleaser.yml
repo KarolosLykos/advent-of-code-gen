@@ -2,7 +2,7 @@ env:
   - GO111MODULE=on
 before:
   hooks:
-    - go mod tidy
+    -  go mod tidy -compat=1.17
 #gomod:
 #  proxy: true
 builds:

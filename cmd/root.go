@@ -2,32 +2,32 @@ package cmd
 
 import (
 	"fmt"
-	"os"
 
+	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+
+	"github.com/KarolosLykos/advent-of-code-gen/internal/config"
 )
 
-var cfg string
+var (
+	debugFlag bool
+)
 
 func NewRootCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:     "cli-template",
-		Short:   "This cli template shows nothing",
-		Long:    `This is a template CLI application, which can be used as a boilerplate for awesome CLI tools written in Go.`,
-		Example: `cli-template`,
-		Version: "v0.0.3", // <--VERSION-->
-		RunE: func(cmd *cobra.Command, args []string) error {
-			fmt.Println(cmd.UsageString())
-
-			return nil
-		},
+		Use:     "aoc",
+		Short:   "AoC helper CLI",
+		Long:    `A cli tool that generates, runs and tests advent of code puzzles.`,
+		Example: `aoc`,
+		Version: "v0.0.1",
 	}
 
-	cmd.PersistentFlags().StringVar(&cfg, "config", "", "config file (default is $HOME/.cobra.yaml)")
+	cmd.PersistentFlags().BoolVar(&debugFlag, "debug", false, "aoc [command] -d")
 
-	cmd.AddCommand(NewDateCmd())    // version subcommand
-	cmd.AddCommand(NewVersionCmd()) // version subcommand
+	cmd.AddCommand(NewInitCmd()) // init command
+	cmd.AddCommand(NewGenCmd())  // gen subcommand
+	cmd.AddCommand(NewSessionCmd())
 
 	return cmd
 }
@@ -42,30 +42,25 @@ func Execute() error {
 }
 
 func init() {
-	cobra.OnInitialize(initConfig)
+	cobra.OnInitialize(initConfig, initializeLogger)
+}
+
+func initializeLogger() {
+	if debugFlag {
+		logrus.SetLevel(logrus.DebugLevel)
+	}
 }
 
 func initConfig() {
-	if cfg != "" {
-		fmt.Println("here", cfg)
-		viper.SetConfigFile(cfg)
-	} else {
-		// Find home directory.
-		home, err := os.UserHomeDir()
-		cobra.CheckErr(err)
+	if err := initConfigurationFile(); err != nil {
+		logrus.Fatal(err)
+	}
+}
 
-		// Search config in home directory with name ".aof-gen.yaml".
-		viper.AddConfigPath(home)
-		viper.SetConfigType("yaml")
-		viper.SetConfigName(".aof-gen.yaml")
+func initConfigurationFile() error {
+	if err := config.SetViperConfig(); err != nil {
+		return fmt.Errorf("could not set viper config: %v", err)
 	}
 
-	viper.AutomaticEnv()
-
-	if err := viper.ReadInConfig(); err != nil {
-		fmt.Println(viper.ConfigFileNotFoundError.Error(viper.ConfigFileNotFoundError{}))
-	}
-
-	fmt.Println("Using config file:", viper.ConfigFileUsed())
-	fmt.Println(viper.Get("aoc_session"))
+	return viper.ReadInConfig()
 }

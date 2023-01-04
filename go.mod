@@ -7,7 +7,7 @@ require github.com/spf13/cobra v1.6.1
 require (
 	github.com/AlecAivazis/survey/v2 v2.3.6
 	github.com/dolmen-go/codegen v1.0.0
-	github.com/sirupsen/logrus v1.6.0
+	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/viper v1.14.0
 	gopkg.in/yaml.v2 v2.4.0
 )
@@ -17,7 +17,6 @@ require (
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.1 // indirect
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
-	github.com/konsorten/go-windows-terminal-sequences v1.0.3 // indirect
 	github.com/magiconair/properties v1.8.6 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect

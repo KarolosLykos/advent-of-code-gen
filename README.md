@@ -6,9 +6,9 @@
 <a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/actions?query=workflow%3AGo+branch%3Amain">
 <img src="https://img.shields.io/github/actions/workflow/status/KarolosLykos/advent-of-code-gen/go.yml?style=for-the-badge" alt="Build Status">
 </a>
-
+    
 <a style="text-decoration: none" href="go.mod">
-<img src="https://img.shields.io/github/go-mod/go-version/KarolosLykos/advent-of-code-gen?style=for-the-badge" alt="Go version">
+<img src="https://img.shields.io/github/go-mod/go-version/KarolosLykos/advent-of-code-gen?style=for-the-badge" alt="https://img.shields.io/badge/Go-v1.17?style=for-the-badge">
 </a>
 
 <a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/releases">

@@ -8,9 +8,9 @@
 </a>
     
 <a style="text-decoration: none" href="go.mod">
-<img src="https://img.shields.io/badge/Go-v1.17?style=for-the-badge" alt="Go version">
+<img src="https://img.shields.io/badge/Go-v1.17-blue?style=for-the-badge" alt="Go version">
 </a>
-
+    
 <a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/releases">
 <img src="https://img.shields.io/github/v/release/KarolosLykos/advent-of-code-gen?style=for-the-badge" alt="Latest Release">
 </a>

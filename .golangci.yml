@@ -3,7 +3,10 @@ run:
 
 linters-settings:
   gci:
-    local-prefixes: github.com/KarolosLykos/advent-of-code-gen
+    sections:
+      - standard
+      - default
+      - prefix(github.com/KarolosLykos/advent-of-code-gen)
   gocyclo:
     min-complexity: 15
   govet:
@@ -56,9 +59,6 @@ linters:
     - unconvert
     - unparam
     - whitespace
-    # - errorlint
-    # - goerr113
-    # - wrapcheck
 issues:
   # Excluding configuration per-path, per-linter, per-text and per-source
   exclude-rules:
@@ -74,4 +74,4 @@ issues:
       text: "unnecessaryDefer:"
 
 service:
-  golangci-lint-version: 1.50.x # use the fixed version to not introduce new linters unexpectedly
+  golangci-lint-version: 1.46.x # use the fixed version to not introduce new linters unexpectedly

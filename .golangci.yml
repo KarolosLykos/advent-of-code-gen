@@ -7,8 +7,6 @@ linters-settings:
       - standard
       - default
       - prefix(github.com/KarolosLykos/advent-of-code-gen)
-#  goimports:
-#    local-prefixes: github.com/KarolosLykos/archista
   gocyclo:
     min-complexity: 15
   govet:
@@ -61,9 +59,6 @@ linters:
     - unconvert
     - unparam
     - whitespace
-    # - errorlint
-    # - goerr113
-    # - wrapcheck
 issues:
   # Excluding configuration per-path, per-linter, per-text and per-source
   exclude-rules:

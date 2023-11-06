@@ -2,7 +2,7 @@ module github.com/KarolosLykos/advent-of-code-gen
 
 go 1.17
 
-require github.com/spf13/cobra v1.7.0
+require github.com/spf13/cobra v1.8.0
 
 require (
 	github.com/AlecAivazis/survey/v2 v2.3.7

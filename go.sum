@@ -1210,8 +1210,8 @@ github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1VwoXQT9A3Wy9MM3WgvqSxFWenqJduM=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/docopt/docopt-go v0.0.0-20180111231733-ee0de3bc6815/go.mod h1:WwZ+bS3ebgob9U8Nd0kOddGdZWjyMGR8Wziv+TBNwSE=
-github.com/dolmen-go/codegen v1.0.1 h1:8K6EwoI+QzQA/szQ2r4shM7jXGG9XVwLC//0YjkqCaQ=
-github.com/dolmen-go/codegen v1.0.1/go.mod h1:CizO325GSq98j3+f6husBwOjkt8zD2WxBEDmk7SuiA8=
+github.com/dolmen-go/codegen v1.0.3 h1:6Rf9BJ2/7BS1c14dlgjid6cgIqT7rv2Cq6yNDmGHRAs=
+github.com/dolmen-go/codegen v1.0.3/go.mod h1:CizO325GSq98j3+f6husBwOjkt8zD2WxBEDmk7SuiA8=
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/dustin/go-humanize v1.0.1/go.mod h1:Mu1zIs6XwVuF/gI1OepvI0qD18qycQx+mFykh5fBlto=
 github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=

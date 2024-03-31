@@ -6,7 +6,7 @@ require github.com/spf13/cobra v1.8.0
 
 require (
 	github.com/AlecAivazis/survey/v2 v2.3.7
-	github.com/dolmen-go/codegen v1.0.1
+	github.com/dolmen-go/codegen v1.0.3
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/viper v1.18.2
 	gopkg.in/yaml.v2 v2.4.0

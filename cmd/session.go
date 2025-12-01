@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"fmt"
+
 	"github.com/spf13/cobra"
 
 	"github.com/KarolosLykos/advent-of-code-gen/internal/config"
@@ -16,7 +18,7 @@ func NewSessionCmd() *cobra.Command {
 		RunE:  sessionCmd,
 	}
 
-	cmd.Flags().StringVarP(&sessionFlag, "session cookie", "s", "", "aoc session [-s module] (-s session-value)")
+	cmd.Flags().StringVarP(&sessionFlag, "value", "v", "", "aoc session [-v cookie]")
 
 	return cmd
 }
@@ -26,6 +28,8 @@ func sessionCmd(_ *cobra.Command, _ []string) error {
 	if err != nil {
 		return err
 	}
+
+	fmt.Println("session cookie: ", sessionFlag)
 
 	return nil
 }

@@ -1,6 +1,7 @@
 module github.com/KarolosLykos/advent-of-code-gen
 
-go 1.17
+go 1.21.0
+
 toolchain go1.24.1
 
 require github.com/spf13/cobra v1.9.1

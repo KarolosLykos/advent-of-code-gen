@@ -23,9 +23,9 @@ func NewRootCmd() *cobra.Command {
 
 	cmd.PersistentFlags().BoolVar(&debugFlag, "debug", false, "aoc [command] --debug")
 
-	cmd.AddCommand(NewInitCmd()) // init command
-	cmd.AddCommand(NewGenCmd())  // gen subcommand
-	cmd.AddCommand(NewSessionCmd())
+	cmd.AddCommand(NewInitCmd())    // init command
+	cmd.AddCommand(NewGenCmd())     // gen subcommand
+	cmd.AddCommand(NewSessionCmd()) // session subcommand
 
 	return cmd
 }

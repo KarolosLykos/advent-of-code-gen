@@ -8,7 +8,7 @@
 </a>
     
 <a style="text-decoration: none" href="go.mod">
-<img src="https://img.shields.io/badge/Go-v1.17-blue?style=for-the-badge" alt="Go version">
+<img src="https://img.shields.io/badge/Go-v1.24-blue?style=for-the-badge" alt="Go version">
 </a>
 
 <br />

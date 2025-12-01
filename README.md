@@ -49,19 +49,22 @@ It helps you:
 
 ## Installation
 
-```bash
-go install github.com/KarolosLykos/advent-of-code/cmd/aoc@latest
-```
-
-## Usage
-
-### 1. Initialize a Project
+### Go
 
 ```bash
-mkdir my-aoc
-cd my-aoc
-aoc init
+go install github.com/KarolosLykos/advent-of-code-gen@latest
 ```
+
+## Build From Source
+
+Or just build it yourself (requires Go 1.2x+):
+
+```bash
+git clone https://github.com/KarolosLykos/advent-of-code-gen.git
+cd advent-of-code-gen
+go build -o aoc .
+```
+
 
 This creates:
 

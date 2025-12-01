@@ -41,19 +41,15 @@
 <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT">
 </a>
 
------
+
+<br>
+<br>
 
 <p align="center">
     <a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/releases">
         <img src="https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-informational?style=for-the-badge" alt="Downloads">
     </a>
 </p>
-
------
-
-# Advent of Code Generator (aoc)
-
----
 
 ## Overview
 

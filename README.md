@@ -8,19 +8,21 @@
 </a>
     
 <a style="text-decoration: none" href="go.mod">
-<img src="https://img.shields.io/badge/Go-v1.21-blue?style=for-the-badge" alt="Go version">
+<img src="https://img.shields.io/badge/Go-v1.17-blue?style=for-the-badge" alt="Go version">
 </a>
 
+<br />
+
 <a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/stargazers">
-<img src="https://img.shields.io/github/stars/KarolosLykos/advent-of-code-gen.svg?style=for-the-badge" alt="Stars">
+<img src="https://img.shields.io/github/stars/KarolosLykos/advent-of-code-gen?style=for-the-badge" alt="Stars">
 </a>
 
 <a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/fork">
-<img src="https://img.shields.io/github/forks/KarolosLykos/advent-of-code-gen.svg?style=for-the-badge" alt="Forks">
+<img src="https://img.shields.io/github/forks/KarolosLykos/advent-of-code-gen?style=for-the-badge" alt="Forks">
 </a>
 
 <a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/issues">
-<img src="https://img.shields.io/github/issues/KarolosLykos/advent-of-code-gen.svg?style=for-the-badge" alt="Issues">
+<img src="https://img.shields.io/github/issues/KarolosLykos/advent-of-code-gen?style=for-the-badge" alt="Issues">
 </a>
 
 

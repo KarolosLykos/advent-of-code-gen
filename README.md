@@ -65,13 +65,19 @@ cd advent-of-code-gen
 go build -o aoc .
 ```
 
+## How to use it
 
+### 1. Initialize a new AoC project
+```bash
+aoc init
+```
 This creates:
 
-- Project directory
+- The project directory
+- Go module
 - aoc.yaml configuration file
 
-### 1. Set Your Session Cookie
+### 2. Set Your Session Cookie
 Copy your session cookie from Advent of Code after logging in:
 ```bash
 aoc session -v "your_session_cookie_value"

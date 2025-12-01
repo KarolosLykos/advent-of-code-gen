@@ -8,21 +8,7 @@
 </a>
     
 <a style="text-decoration: none" href="go.mod">
-<img src="https://img.shields.io/badge/Go-v1.17-blue?style=for-the-badge" alt="Go version">
-</a>
-    
-<a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/releases">
-<img src="https://img.shields.io/github/v/release/KarolosLykos/advent-of-code-gen?style=for-the-badge" alt="Latest Release">
-</a>
-    
-<a href="https://codecov.io/gh/KarolosLykos/advent-of-code-gen" style="text-decoration: none">
-<img src="https://img.shields.io/codecov/c/gh/KarolosLykos/advent-of-code-gen?color=magenta&logo=codecov&style=for-the-badge" alt="Downloads">
-</a>
-
-<br />
-
-<a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/releases">
-<img src="https://img.shields.io/github/downloads/KarolosLykos/advent-of-code-gen/total.svg?style=for-the-badge" alt="Downloads">
+<img src="https://img.shields.io/badge/Go-v1.21-blue?style=for-the-badge" alt="Go version">
 </a>
 
 <a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/stargazers">
@@ -35,10 +21,6 @@
 
 <a style="text-decoration: none" href="https://github.com/KarolosLykos/advent-of-code-gen/issues">
 <img src="https://img.shields.io/github/issues/KarolosLykos/advent-of-code-gen.svg?style=for-the-badge" alt="Issues">
-</a>
-
-<a style="text-decoration: none" href="https://opensource.org/licenses/MIT">
-<img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT">
 </a>
 
 

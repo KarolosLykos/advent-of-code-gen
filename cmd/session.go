@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 
 	"github.com/KarolosLykos/advent-of-code-gen/internal/config"
@@ -24,12 +22,12 @@ func NewSessionCmd() *cobra.Command {
 }
 
 func sessionCmd(_ *cobra.Command, _ []string) error {
-	_, err := config.GetUserConfig()
+	cfg, err := config.GetUserConfig()
 	if err != nil {
 		return err
 	}
 
-	fmt.Println("session cookie: ", sessionFlag)
+	cfg.Session = sessionFlag
 
-	return nil
+	return config.UpdateUserConfig(cfg)
 }

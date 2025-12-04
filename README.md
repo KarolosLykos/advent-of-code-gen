@@ -98,11 +98,13 @@ aoc gen -y 2022 -d 7
 Each generated solution includes:
 - A main function ready to run the solutions
 - Helper functions for reading AoC inputs
+- A test file to test against the examples
 
 ```bash
 projectDir/
 └── {2022}/day{07}/
   ├── input.txt
+  ├── main_test.go
   └── main.go
 ```
 

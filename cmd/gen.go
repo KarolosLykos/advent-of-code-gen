@@ -80,7 +80,7 @@ func NewGenCmd() *cobra.Command {
 	}
 
 	cmd.Flags().IntVarP(&yearFlag, "year", "y", time.Now().Year(), "aoc gen [-y year]")
-	cmd.Flags().IntVarP(&dayFlag, "day", "d", 1, "aoc gen [-d day]")
+	cmd.Flags().IntVarP(&dayFlag, "day", "d", time.Now().Day(), "aoc gen [-d day]")
 
 	return cmd
 }

@@ -62,7 +62,7 @@ func genCmd(cmd *cobra.Command, _ []string) error {
 		start, end = dayFlag, dayFlag
 	}
 
-	for i := start; i < end; i++ {
+	for i := start; i <= end; i++ {
 		unlocked, err := checkIfDayIsUnlocked(cmd.Context(), cfg.Session, yearFlag, i)
 		if err != nil {
 			return err
